@@ -1,0 +1,35 @@
+Client events:
+
+watchTable: When a observer joins the table.
+takeSeat: When a player joins the table.
+leaveTable: When a player leaves the table.
+bet: When a player places a bet during a hand.
+fold: When a player folds during a hand.
+call: When a player calls a bet during a hand.
+raise: When a player raises a bet during a hand.
+chatMessage: When a player sends a chat message.
+
+Server events:
+
+tableUpdated: retrieve current table status
+handStarted: When a new hand is started.
+dealCards: When the dealer deals cards to the players.
+flop: When the dealer deals the flop.
+turn: When the dealer deals the turn.
+river: When the dealer deals the river.
+
+betPlaced: When a player places a bet during a hand.
+playerFolded: When a player folds during a hand.
+playerCalled: When a player calls a bet during a hand.
+playerRaised: When a player raises a bet during a hand.
+
+nextPlayerTurn: When it is the next player's turn to act.
+roundComplete: When a betting round is complete.
+handComplete: When a hand is complete.
+chatMessage: When a player sends a chat message.
+
+playerJoined: When a player joins the table.
+playerLeft: When a player leaves the table.
+playerReady: When a player indicates they are ready to start the game.
+
+You may want to modify this list further based on the specific features and functionality of your poker game.
