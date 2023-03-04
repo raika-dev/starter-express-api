@@ -7,7 +7,7 @@ export const userService = {
     const user: IUser = {
       address: address,
       name: address,
-      balance: process.env.MODE == "test" ? 10000 : 0,
+      balance: 10000,
       avatarUrl: "",
     }
     try {

@@ -8,6 +8,7 @@ import "dotenv/config";
 
 import PokerService from "./src/services/pokerService";
 import { connectDatabase } from "./src/configs/db";
+import indexRouter from "./src/routes/index";
 
 class App {
   private server: http.Server;
@@ -20,14 +21,19 @@ class App {
 
     const app = express();
     app.use(cors());
-    app.use(express.static(path.join(__dirname, '../../poker-client/build')));
-    app.get('*', (req, res) => {
-      const contents = fs.readFileSync(
-        path.resolve(__dirname, '../../poker-client/build/index.html'),
-        'utf8',
-      )
-      res.send(contents)
-    })
+    app.set
+    app.set("views", path.join(__dirname, "src/views"));
+    app.set("view engine", "ejs");
+    app.use(express.static(path.join(__dirname, "public")));
+    // app.use(express.static(path.join(__dirname, '../../poker-client/build')));
+    // app.get('*', (req, res) => {
+    //   const contents = fs.readFileSync(
+    //     path.resolve(__dirname, '../../poker-client/build/index.html'),
+    //     'utf8',
+    //   )
+    //   res.send(contents)
+    // })
+    app.use("/", indexRouter);
 
     this.server = new http.Server(app);
     this.io = new SocketIO.Server(this.server, {
@@ -55,4 +61,4 @@ class App {
   }
 }
 
-new App(Number(process.env.PORT));
+new App(Number(5000));
